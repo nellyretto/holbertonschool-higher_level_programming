@@ -4,6 +4,10 @@
 def list_division(my_list_1, my_list_2, list_length):
 
     result = []
+    division_by_zero = False
+    wrong_type = False
+    out_of_range = False
+
     try:
         for i in range(list_length):
             try:
@@ -16,13 +20,20 @@ def list_division(my_list_1, my_list_2, list_length):
                         result.append(num1 / num2)
                     except ZeroDivisionError:
                         result.append(0)
-                        print("division by 0")
+                        if not division_by_zero:
+                            print("division by 0")
+                            division_by_zero = True
                 else:
-                    print("wrong type")
+                    if not wrong_type:
+                        print("wrong type")
+                        wrong_type = True
                     result.append(0)
             except IndexError:
-                print("out of range")
+                if not out_of_range:
+                    print("out of range")
+                    out_of_range = True
                 break
     finally:
-        print("out of range")
+        if not out_of_range:
+            print("out of range")
         return result
