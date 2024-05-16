@@ -1,10 +1,15 @@
 #!/usr/bin/python3
 
+"""
+This module contains a class for representing squares.
+    """
+
 
 class Square:
-    """
-    A simple class representing a square.
 
-    This class doesn't have any attributes or methods yet.
+    """
+    A class representing a square.
+
+    This class does not contain any methods or attributes yet.
     """
     pass
