@@ -36,3 +36,7 @@ ValueError: cannot convert float NaN to integer
 
 >>> add_integer(-9.6, 2)
 -7
+
+>>> add_intenger((), [])
+Traceback (most recent call last):
+NameError: name 'add_intenger' is not defined
