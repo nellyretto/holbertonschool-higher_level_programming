@@ -33,3 +33,6 @@ TypeError: b must be an integer
 >>> add_integer(3, float('NaN'))
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
+
+>>> add_integer(-9.6, 2)
+-7
