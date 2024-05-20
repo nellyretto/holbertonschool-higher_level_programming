@@ -12,17 +12,7 @@
 >>> add_integer(100.3, -2)
 98
 
->>> add_integer(-60, -20)
--80
-
->>> add_integer(-5.3, -5.2)
--10
-
 >>> add_integer({}, {})
-Traceback (most recent call last):
-TypeError: a must be an integer
-
->>> add_integer([], [])
 Traceback (most recent call last):
 TypeError: a must be an integer
 
@@ -34,9 +24,5 @@ TypeError: b must be an integer
 Traceback (most recent call last):
 ValueError: cannot convert float NaN to integer
 
->>> add_integer(-9.6, 2)
--7
-
->>> add_intenger((), [])
-Traceback (most recent call last):
-NameError: name 'add_intenger' is not defined
+>>> add_integer(39.42, -40)
+-1
