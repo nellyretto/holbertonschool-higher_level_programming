@@ -44,3 +44,9 @@ Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres
 
 >>> text_indentation("test with no punctuation")
 test with no punctuation
+
+
+>>> text_indentation("\n.\n")
+<BLANKLINE>
+.
+<BLANKLINE>
