@@ -21,7 +21,4 @@ def is_kind_of_class(obj, a_class):
         False: If the object is not an instance of, or is not
         derived from, the specified class.
     """
-    if not isinstance(obj, a_class):
-        return False
-    else:
-        return obj
+    return isinstance(obj, a_class)
