@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+"""
+    This area contains the function lookup
+    """
+
 
 def lookup(obj):
     """
