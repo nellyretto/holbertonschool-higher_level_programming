@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 
 
+"""
+This area has class BaseGeometry
+"""
+
+
 class BaseGeometry:
 
     """
