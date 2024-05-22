@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 
 
 """
@@ -17,4 +17,5 @@ def inherits_from(obj, a_class):
     Returns:
         True if the object inherits from the class, False otherwise.
     """
-    return type(obj) != a_class and issubclass(type(obj), a_class)
+
+    return False if type(obj) is a_class else isinstance(obj, a_class)
