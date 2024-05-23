@@ -4,6 +4,7 @@
 This module contains the definition of the BaseGeometry class.
 """
 
+
 class BaseGeometry:
     """
     This is the base class for geometry objects.
@@ -34,5 +35,8 @@ class BaseGeometry:
         implemented in the base class.
         Subclasses should override this method to provide
         their own implementation.
+
+        Raises:
+            Exception: This method is not implemented in the base class.
         """
         raise Exception("area() is not implemented")
