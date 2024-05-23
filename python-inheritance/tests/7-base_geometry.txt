@@ -1,41 +1,67 @@
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+>>> a = BaseGeometry()
 
->>> bg = BaseGeometry() 
->>> bg.area()
+# Check if 'a' is an instance of BaseGeometry
+>>> isinstance(a, BaseGeometry)
+True
+
+# Validate a positive integer
+>>> a.integer_validator("width", 2)
+
+# Call the area method and check that it raises an exception
+>>> a.area()
 Traceback (most recent call last):
 Exception: area() is not implemented
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("my_int", 12)
->>> bg.integer_validator("width", 89)
-
->>> bg = BaseGeometry()
->>> bg.integer_validator("age", 0)
+# Validate a value equal to zero
+>>> a.integer_validator("width", 0)
 Traceback (most recent call last):
-ValueError: age must be greater than 0
+ValueError: width must be greater than 0
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("name", Nelly)
+# Validate a negative value
+>>> a.integer_validator("width", -5)
 Traceback (most recent call last):
-NameError: name 'Nelly' is not defined
+ValueError: width must be greater than 0
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("name", True)
+>>> a.integer_validator()
 Traceback (most recent call last):
-TypeError: name must be an integer
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("name")
+>>> a.integer_validator("width")
 Traceback (most recent call last):
 TypeError: integer_validator() missing 1 required positional argument: 'value'
 
->>> bg = BaseGeometry()
->>> bg.area(1, 2)
+# Validate an incorrect data type (string)
+>>> a.integer_validator("width", "a")
 Traceback (most recent call last):
-TypeError: area() takes 1 positional argument but 3 were given
+TypeError: width must be an integer
 
+# Validate an incorrect data type (tuple)
+>>> a.integer_validator("age", (7,))
+Traceback (most recent call last):
+TypeError: age must be an integer
 
->>> bg = BaseGeometry()
->>> bg.integer_validator("age", "4")
+# Validate an incorrect data type (list)
+>>> a.integer_validator("age", [3])
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+# Validate an incorrect data type (boolean)
+>>> a.integer_validator("age", False)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+# Validate an incorrect data type (set)
+>>> a.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+# Validate an incorrect data type (None)
+>>> a.integer_validator("age", None)
+Traceback (most recent call last):
+TypeError: age must be an integer
+
+# Validate an incorrect data type (float)
+>>> a.integer_validator("age", 5.54)
 Traceback (most recent call last):
 TypeError: age must be an integer
