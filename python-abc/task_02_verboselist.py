@@ -1,4 +1,3 @@
-
 class VerboseList(list):
 
     def append(self, item):
