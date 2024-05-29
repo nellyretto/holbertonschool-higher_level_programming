@@ -31,5 +31,5 @@ class CustomObject:
                     return obj
                 else:
                     return None
-        except(IOError, pickle.PickleError):
+        except (IOError, pickle.PickleError):
             return None
