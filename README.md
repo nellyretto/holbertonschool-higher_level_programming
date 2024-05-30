@@ -1,6 +1,6 @@
 # Python language programming
 
-![py](https://i.pinimg.com/originals/d4/81/f3/d481f3c72e283309071f79e01b05c06d.gif)
+![py](https://i.pinimg.com/originals/e0/cf/be/e0cfbe7818f6d5f7d657b17b054175d4.gif)
 
 ## Table of Contents
 * Installation
