@@ -38,6 +38,7 @@ def add_user():
    if username in users:
        return {"error": "User already exists"}, 400
    users[username] = {
+      "username": user_data.get('username'),
       "name": user_data.get('name'),
       "age": user_data.get('age'),
       "city": user_data.get('city')
