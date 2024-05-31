@@ -26,7 +26,7 @@ class Server(BaseHTTPRequestHandler):
             self.wfile.write(json.dumps(info).encode('utf-8'))
         else:
             self._set_headers(status_code=404)
-            self.wfile.write(b'404 not found')
+            self.wfile.write(b'404 Not Found')
 
 
 def run(server_class=HTTPServer, handler_class=Server, port=8000):
