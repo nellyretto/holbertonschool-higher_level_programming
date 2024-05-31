@@ -29,21 +29,16 @@ def get_user(username):
    return user
 
 
-@app.route("/add_user", methods=['POST'])
+@app.route("/add_user", methods=["POST"])
 def add_user():
-   user_data = request.get_json()
-   username = user_data.get('username')
-   if not username:
-       return {"error": "Username is required"}, 400
-   if username in users:
-       return {"error": "User already exists"}, 400
-   users[username] = {
-      "username": user_data.get('username'),
-      "name": user_data.get('name'),
-      "age": user_data.get('age'),
-      "city": user_data.get('city')
-   }
-   return {"message": "User added", "user": user_data}, 201
+    new_user = request.json
+    username = new_user.get("username")
+    if not username:
+        return jsonify({"error": "Username is required"}), 400
+    if username == users:
+        return jsonify({"error": "User already exists"}), 400
+    users[username] = new_user
+    return jsonify({"message": "User added", "user": new_user}), 201
 
 
 if __name__ == "__main__":
