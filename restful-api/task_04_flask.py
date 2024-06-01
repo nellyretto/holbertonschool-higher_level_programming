@@ -28,7 +28,7 @@ def add_user():
     user_data = request.get_json()
     username = user_data['username']
     users[username] = user_data
-    return jsonify(user_data)
+    return jsonify(user_data), 201
 
 if __name__ == "__main__":
     app.run(debug=True)
