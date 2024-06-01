@@ -26,9 +26,12 @@ def get_user(username):
 @app.route('/add_user', methods=['POST'])
 def add_user():
     user_data = request.get_json()
-    username = user_data['username']
-    users[username] = user_data
-    return jsonify(user_data), 201
+    if 'username' in user_data and 'name' in user_data and 'age' in user_data and 'city' in user_data:
+        username = user_data['username']
+        users[username] = user_data
+        return jsonify(user_data), 201
+    else:
+        return "Invalid user data", 400
 
 if __name__ == "__main__":
     app.run(debug=True)
