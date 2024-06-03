@@ -1,5 +1,5 @@
 FROM alpine
-RUN apk add --no-cache curl
 VOLUME /data
-COPY /config.txt /app/ 
+FROM alpine 
+CMD ["echo", "Hello, World!"]
 CMD ["sh"]
