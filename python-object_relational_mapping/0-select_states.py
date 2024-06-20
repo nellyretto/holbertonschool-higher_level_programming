@@ -2,14 +2,15 @@
 import MySQLdb
 import sys
 
-def select_states():
+if __name__ == '__main__':
     """
     Connects to a MySQL database and selects all rows from the 'states' table.
     Prints each row in the result set.
     """
 
     # Connect to the MySQL database
-    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    db = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3])
 
     # Create a cursor object to execute SQL queries
     cur = db.cursor()
@@ -27,6 +28,3 @@ def select_states():
     # Close the cursor and database connection
     cur.close()
     db.close()
-
-# Call the select_states function
-select_states()
