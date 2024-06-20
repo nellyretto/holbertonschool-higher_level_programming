@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-import MySQLdb
-import sys
-
 """
     Connects to a MySQL database and selects all rows from the 'states' table.
     Prints each row in the result set.
-    """
+"""
+import MySQLdb
+import sys
+
 
 if __name__ == '__main__':
 
