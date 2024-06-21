@@ -32,7 +32,7 @@ if __name__ == "__main__":
 
     # Print the state's id and name if found, otherwise print "Not found"
     if state:
-        print("{}: {}".format(state.id, state.name))
+        print(state.id)
     else:
         print("Not found")
 
