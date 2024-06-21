@@ -1,6 +1,18 @@
 #!/usr/bin/python3
 
+"""
+    Connects to a MySQL database and retrieves the states that
+    match a given name.
 
+    Args:
+        username (str): The username to connect to the database.
+        password (str): The password to connect to the database.
+        database (str): The name of the database to connect to.
+        state_name (str): The name of the state to filter by.
+
+    Returns:
+        None
+    """
 
 import MySQLdb
 import sys
