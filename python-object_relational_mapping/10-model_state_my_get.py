@@ -23,18 +23,14 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Get the state name from the command line arguments
     search_state_name = sys.argv[4]
 
-    # Query the database for the state with the given name
     state = session.query(State).filter(State.name ==
                                         search_state_name).first()
 
-    # Print the state's id and name if found, otherwise print "Not found"
     if state:
         print(state.id)
     else:
         print("Not found")
 
-    # Close the session
     session.close()
