@@ -20,14 +20,14 @@ if __name__ == '__main__':
 
     cur = db.cursor()
 
-    cur.execute("SELECT cities.name FROM cities INNER JOIN states ON "
+    cur.execute("SELECT cities.id, cities.name, states.name FROM cities INNER JOIN states ON "
                 "cities.state_id = "
                 "states.id WHERE states.name = %s ORDER BY "
                 "cities.name ASC", (sys.argv[4],))
 
     rows = cur.fetchall()
 
-    print(", ".join(row[0] for row in rows))
+    print(", ".join(row[1] for row in rows))
 
     cur.close()
     db.close()
