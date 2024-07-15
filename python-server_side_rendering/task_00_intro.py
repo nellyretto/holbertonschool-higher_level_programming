@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-template = "Hello {name}, You are invited to the {event_title} on {event_date} at {event_location}. We look forward to your presence. Best regards, Event Team"
+template = []
 
 def generate_invitation(templates, attendees):
     
