@@ -13,7 +13,8 @@ def generate_invitations(template, attendees):
         return
     
     if len(attendees) == 0:
-        raise ValueError("Attendees list is empty")
+        return
+    
     
     for index, attendee in enumerate(attendees, start=1):
         modified_template = template.replace("{name}", attendee.get('name', 'N/A'))
