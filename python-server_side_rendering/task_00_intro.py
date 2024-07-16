@@ -24,5 +24,8 @@ def generate_invitations(template, attendees):
 
         output_file = f"output_{index}.txt"
 
-        with open(output_file, 'w') as file:
-            file.write(modified_template)
+        if not os.path.exists(output_file):
+            with open(output_file, 'w') as file:
+                file.write(modified_template)
+        else:
+            print(f"File {output_file} exists")
