@@ -9,10 +9,10 @@ def get_invitations(template, attendees):
     if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
         raise TypeError("Attendees must be a list of dictionaries")
          
-    if not template:
+    if not template == "":
         raise ValueError("Template is empty")
     
-    if not attendees:
+    if len(attendees) == 0:
         raise ValueError("Attendees list is empty")
     
     for index, attendee in enumerate(attendees, start=1):
