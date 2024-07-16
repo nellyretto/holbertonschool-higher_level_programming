@@ -2,7 +2,7 @@
 
 import os
 
-def get_invitations(template, attendees):
+def generate_invitations(template, attendees):
     if not isinstance(template, str):
         raise TypeError("Template must be a string")
     
