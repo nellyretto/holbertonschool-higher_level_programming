@@ -4,10 +4,10 @@ import os
 
 def generate_invitations(template, attendees):
     if not isinstance(template, str):
-        raise TypeError("Template must be a string")
+        raise ValueError("Template must be a string")
     
     if not isinstance(attendees, list) or not all(isinstance(item, dict) for item in attendees):
-        raise TypeError("Attendees must be a list of dictionaries")
+        raise ValueError("Attendees must be a list of dictionaries")
          
     if template == "":
         return
