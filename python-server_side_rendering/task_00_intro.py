@@ -1,20 +1,32 @@
 #!/usr/bin/python3
 
-template = []
+import os 
 
-def generate_invitation(templates, attendees):
+
+def get_invitations(template, attendees):
+
+    if not isinstance (template, str):
+        raise TypeError("Must be a string")
     
-    template = []
-
-    attendees = []
+    if not isinstance (attendees, list):
+         if not all(isinstance(item, dict) for item in attendees):
+             raise TypeError("Must be a list of dictionaries")
+         
+    if not template:
+        raise ValueError("Template is empty")
     
-    if isinstance(template,str):
-        print("template is a string")
-    else:
-        print("template is not a string")
+    if not attendees:
+        raise ValueError("Attendees is empty")
+    
 
+    for index, attendee in enumerate(attendees, start=1):
 
-    if isinstance(attendees, list):
-        print("attendess is a list")
-    else:
-        print("attendees is not a list")
+        modified_template = template.replace("{name}", attendee.get('name', 'N/A'))
+        modified_template = modified_template.replace("{event_title}", attendee.get('event_title', 'N/A'))
+        modified_template = modified_template.replace("{event_date}", attendee.get('event_date', 'N/A'))
+        modified_template = modified_template.replace("{event_location}", attendee.get('event_location', 'N/A'))
+
+        output_file = f"output_{index}.txt"
+
+        with open(output_file, 'w') as file:
+            file.write(modified_template)
